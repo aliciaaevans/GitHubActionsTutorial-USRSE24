@@ -11,18 +11,16 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v3
         with:
           miniconda-version: "latest"
-          channels: conda-forge, defaults
-          activate-environment: scipy
-          python-version: 3.9
+          channels: conda-forge, bioconda
+          activate-environment: test
+          python-version: 3.11
 
       - name: Install conda packages
-        shell: pwsh
         run: |
-          conda install scipy
+          conda install bioconda-utils
 
-      - name: Hello World 
-        shell: pwsh
+      - name: Hello World
         run: |
-          python -c "import scipy as sp; print('Scipy version: '+sp.__version__)"
+          bioconda-utils --version
 
 
