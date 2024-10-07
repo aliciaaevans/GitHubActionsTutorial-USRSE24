@@ -17,10 +17,10 @@ jobs:
 
       - name: Install conda packages
         run: |
-          conda install bioconda-utils
+          conda list
 
-      - name: Hello World
-        run: |
-          bioconda-utils --version
+      # - name: Hello World
+      #   run: |
+      #     bioconda-utils --version
 
 
